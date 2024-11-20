@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import pyperclip
 
-st.set_page_config(page_title='Name Your Emotion',favicon='💭')
-                   #page_icon=, 
+st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
                    #layout='wide')
 
 st.markdown("""
