@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from st_copy_to_clipboard import st_copy_to_clipboard
 import os
 
 st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
@@ -259,11 +258,12 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
-      
-        # Copy to Clipboard button
-        if reflection:
-            st_copy_to_clipboard(reflection)
-            #st.success("Your reflection has been copied to the clipboard!")
+        
+        hosted_html_file = "copy.html"
+        iframe_url = f"{hosted_html_file}?copy={reflection}"
+        
+        if st.markdown(f'<iframe style="overflow: hidden;" src="{iframe_url}"></iframe>', unsafe_allow_html=True):
+            st.success("Your reflection has been copied to the clipboard!")
     
         # Back buttons
         st.divider()
