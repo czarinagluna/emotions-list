@@ -259,27 +259,7 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
-      
-        def copy_to_clipboard(text):
-            # JavaScript code to copy text to clipboard
-            st.markdown(f"""
-            <script>
-            function copyText() {{
-                var text = `{text}`;
-                navigator.clipboard.writeText(text).then(function() {{
-                    console.log('Text successfully copied to clipboard');
-                }}, function(err) {{
-                    console.error('Unable to copy text to clipboard', err);
-                }});
-            }}
-            copyText();
-            </script>
-            """, unsafe_allow_html=True)
-        
-        # Button to trigger copy to clipboard functionality
-        if st.button("Copy to Clipboard"):
-            copy_to_clipboard(reflection)
-            st.success("Your reflection has been copied to the clipboard!")
+        st.code(reflection)
     
         # Back buttons
         st.divider()
