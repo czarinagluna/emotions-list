@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pyperclip
+import clipboard
 import os
 
 st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
@@ -259,12 +259,13 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
-
+  
         # Copy to Clipboard button
         if st.button("Copy to Clipboard"):
-            pyperclip.copy(reflection)
+            st.session_state.copied.append(reflection)
+            clipboard.copy(reflection)
             st.success("Your reflection has been copied to the clipboard!")
-
+    
         # Back buttons
         st.divider()
         st.button("Back to Categories", on_click=navigate, args=("category",), key="back_to_categories")
