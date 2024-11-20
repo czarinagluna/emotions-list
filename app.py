@@ -261,13 +261,11 @@ if page == "Name Your Emotion":
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         #reflection = st.text_area("Write your thoughts here:")
       
-        reflection_input = st.text_area("Write your reflection here:", height=100)
-        
-        # Display reflection in a copy-friendly format when the button is pressed
-        if st.button("Show Reflection to Copy"):
+        # Button to show the reflection for copying manually
+        if st.button("Show Reflection for Copy"):
             if reflection_input:
-                st.markdown(f"<pre>{reflection_input}</pre>", unsafe_allow_html=True)
-                st.success("You can copy the reflection above.")
+                st.text_area("Your Reflection (Copy this)", reflection_input, height=100, key="reflection_copy")
+                st.success("You can copy the reflection text from the box above.")
             else:
                 st.warning("Please write something in the reflection field before copying.")
 
