@@ -261,13 +261,10 @@ if page == "Name Your Emotion":
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection_input = st.text_area("Write your thoughts here:")
       
-        # Button to show the reflection for copying manually
-        if st.button("Show Reflection for Copy"):
-            if reflection_input:
-                st.text_area("Your Reflection (Copy this)", reflection_input, height=100, key="reflection_copy")
-                st.success("You can copy the reflection text from the box above.")
-            else:
-                st.warning("Please write something in the reflection field before copying.")
+        # Copy to Clipboard button
+        # if st.button("Copy to Clipboard"):
+        #     pyperclip.copy(reflection)
+        #     st.success("Your reflection has been copied to the clipboard!")
 
     
         # Back buttons
