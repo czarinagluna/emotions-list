@@ -259,7 +259,7 @@ if page == "Name Your Emotion":
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
         
-        hosted_html_file = "copy.html"
+        hosted_html_file = "https://everydayswag.org/files/copy.html"
         iframe_url = f"{hosted_html_file}?copy={reflection}"
         
         if st.markdown(f'<iframe style="overflow: hidden;" src="{iframe_url}"></iframe>', unsafe_allow_html=True):
