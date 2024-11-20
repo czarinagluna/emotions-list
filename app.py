@@ -6,11 +6,11 @@ import os
 st.set_page_config(page_title='Name Your Emotion',page_icon='⨾')
                    #layout='wide'𓍼ོ)
 
-st.markdown("""
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#         @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap');
+#     </style>
+# """, unsafe_allow_html=True)
 
 # Custom CSS for button styling
 st.markdown("""
