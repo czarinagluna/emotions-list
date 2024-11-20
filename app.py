@@ -259,7 +259,7 @@ if page == "Name Your Emotion":
                     
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
-        #reflection = st.text_area("Write your thoughts here:")
+        reflection_input = st.text_area("Write your thoughts here:")
       
         # Button to show the reflection for copying manually
         if st.button("Show Reflection for Copy"):
