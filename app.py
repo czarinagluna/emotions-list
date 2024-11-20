@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import clipboard
+from st_copy_to_clipboard import st_copy_to_clipboard
 import os
 
 st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
@@ -259,7 +259,11 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
-        st.code(reflection)
+      
+        # Copy to Clipboard button
+        if st.button("Copy to Clipboard"):
+            st_copy_to_clipboard.copy(reflection)
+            st.success("Your reflection has been copied to the clipboard!")
     
         # Back buttons
         st.divider()
