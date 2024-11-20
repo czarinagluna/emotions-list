@@ -3,8 +3,8 @@ import pandas as pd
 import pyperclip
 import os
 
-st.set_page_config(page_title='Name Your Emotion',page_icon='𓍼ོ')
-                   #layout='wide')
+st.set_page_config(page_title='Name Your Emotion',page_icon='⨾')
+                   #layout='wide'𓍼ོ)
 
 st.markdown("""
     <style>
