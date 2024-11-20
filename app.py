@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import pyperclip
-import os
 
 st.set_page_config(page_title='Name Your Emotion',favicon='💭')
                    #page_icon=, 
