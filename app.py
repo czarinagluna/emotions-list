@@ -11,6 +11,8 @@ st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
 #     </style>
 # """, unsafe_allow_html=True)
 
+
+
 # Custom CSS for button styling
 st.markdown("""
     <style>
@@ -257,9 +259,36 @@ if page == "Name Your Emotion":
                     
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
-        reflection = st.text_area("Write your thoughts here:")
-      
-        st.success("Your reflection has been copied to the clipboard!")
+        #reflection = st.text_area("Write your thoughts here:")
+
+        # Reflection text to be copied
+        reflection = "Write your thoughts here:."
+        
+        # Function to generate the copy to clipboard button
+        def copy_to_clipboard(reflection_text):
+            # JavaScript to copy text to clipboard
+            st.markdown(f"""
+            <script>
+                function copyText() {{
+                    const text = `{reflection_text}`;
+                    navigator.clipboard.writeText(text).then(function() {{
+                        console.log('Text successfully copied to clipboard');
+                        alert('Your reflection has been copied to the clipboard!');
+                    }}, function(err) {{
+                        console.error('Error copying text: ', err);
+                    }});
+                }}
+                copyText();
+            </script>
+            """, unsafe_allow_html=True)
+        
+        # Display the reflection text in a text area (optional)
+        st.text_area("Reflection", reflection, height=100)
+        
+        # Button to trigger the copy functionality
+        if st.button("Copy to Clipboard"):
+            copy_to_clipboard(reflection)
+            st.success("Your reflection has been copied to the clipboard!")
     
         # Back buttons
         st.divider()
