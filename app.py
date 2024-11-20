@@ -259,7 +259,9 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         reflection = st.text_area("Write your thoughts here:")
-  
+      
+        if 'copied' not in st.session_state:
+            st.session_state.copied = []
         # Copy to Clipboard button
         if st.button("Copy to Clipboard"):
             st.session_state.copied.append(reflection)
