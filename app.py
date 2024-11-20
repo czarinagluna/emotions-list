@@ -280,11 +280,11 @@ if page == "Name Your Emotion":
             """, unsafe_allow_html=True)
       
   
-        reflection_test = st.text_area("Write your reflection here:", height=100)
+        reflection_input = st.text_area("Write your reflection here:", height=100)
   
         # Button to trigger the copy functionality
         if st.button("Copy to Clipboard"):
-            if reflection_test:  # Only trigger copy if there is text entered
+            if reflection_input:  # Only trigger copy if there is text entered
                 st.markdown(copy_to_clipboard(reflection_input), unsafe_allow_html=True)
                 st.success("Your reflection has been copied to the clipboard!")
             else:
