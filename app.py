@@ -261,9 +261,8 @@ if page == "Name Your Emotion":
         reflection = st.text_area("Write your thoughts here:")
       
         # Copy to Clipboard button
-        if st.button("Copy to Clipboard"):
-            st_copy_to_clipboard(reflection)
-            st.success("Your reflection has been copied to the clipboard!")
+        st_copy_to_clipboard(reflection)
+            #st.success("Your reflection has been copied to the clipboard!")
     
         # Back buttons
         st.divider()
