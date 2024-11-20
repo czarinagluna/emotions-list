@@ -260,10 +260,7 @@ if page == "Name Your Emotion":
                 
         st.write(f"### Reflect on your feeling of **{selected_emotion}**:")
         #reflection = st.text_area("Write your thoughts here:")
-
-        # Reflection text to be copied
-        reflection = ""
-        
+      
         # Function to generate the copy to clipboard button
         def copy_to_clipboard(reflection_text):
             # JavaScript to copy text to clipboard
@@ -281,14 +278,17 @@ if page == "Name Your Emotion":
                 copyText();
             </script>
             """, unsafe_allow_html=True)
-        
-        # Display the reflection text in a text area (optional)
-        st.text_area("Write your thoughts here:", reflection, height=100)
-        
+      
+  
+        reflection_input = st.text_area("Write your reflection here:", height=100)
+  
         # Button to trigger the copy functionality
         if st.button("Copy to Clipboard"):
-            copy_to_clipboard(reflection)
-            st.success("Your reflection has been copied to the clipboard!")
+            if reflection_input:  # Only trigger copy if there is text entered
+                copy_to_clipboard(reflection_input)
+            else:
+                st.warning("Please write something in the reflection field before copying.")
+
     
         # Back buttons
         st.divider()
