@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.set_page_config(page_title='Name Your Emotion',page_icon='💭')
+st.set_page_config(page_title='Name Your Emotion',page_icon='favicon.png')
                    #layout='wide'𓍼ོ)
 
 # st.markdown("""
@@ -262,7 +262,7 @@ if page == "Name Your Emotion":
         #reflection = st.text_area("Write your thoughts here:")
 
         # Reflection text to be copied
-        reflection = "Write your thoughts here:."
+        reflection = ""
         
         # Function to generate the copy to clipboard button
         def copy_to_clipboard(reflection_text):
@@ -283,7 +283,7 @@ if page == "Name Your Emotion":
             """, unsafe_allow_html=True)
         
         # Display the reflection text in a text area (optional)
-        st.text_area("Reflection", reflection, height=100)
+        st.text_area("Write your thoughts here:", reflection, height=100)
         
         # Button to trigger the copy functionality
         if st.button("Copy to Clipboard"):
