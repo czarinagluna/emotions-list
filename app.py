@@ -266,8 +266,8 @@ if page == "Name Your Emotion":
             # JavaScript to copy text to clipboard
             st.markdown(f"""
             <script>
-                function copyText() {{
-                    const text = `{reflection_text}`;
+                function copyTextToClipboard() {{
+                    const text = `{reflection_text.replace("`", "\\`")}`;
                     navigator.clipboard.writeText(text).then(function() {{
                         console.log('Text successfully copied to clipboard');
                         alert('Your reflection has been copied to the clipboard!');
@@ -275,7 +275,7 @@ if page == "Name Your Emotion":
                         console.error('Error copying text: ', err);
                     }});
                 }}
-                copyText();
+                copyTextToClipboard();
             </script>
             """, unsafe_allow_html=True)
       
