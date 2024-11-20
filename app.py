@@ -265,7 +265,7 @@ if page == "Name Your Emotion":
         # Copy to Clipboard button
         if st.button("Copy to Clipboard"):
             st.session_state.copied.append(reflection)
-            clipboard.copy(reflection)
+            
             st.success("Your reflection has been copied to the clipboard!")
     
         # Back buttons
