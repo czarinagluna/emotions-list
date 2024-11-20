@@ -284,7 +284,7 @@ if page == "Name Your Emotion":
   
         # Button to trigger the copy functionality
         if st.button("Copy to Clipboard"):
-            if reflection_input:  # Only trigger copy if there is text entered
+            if reflection:  # Only trigger copy if there is text entered
                 copy_to_clipboard(reflection)
                 st.success("Your reflection has been copied to the clipboard!")
             else:
